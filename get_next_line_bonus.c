@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-you <mait-you@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 12:54:13 by mait-you          #+#    #+#             */
-/*   Updated: 2024/11/21 15:29:05 by mait-you         ###   ########.fr       */
+/*   Created: 2024/11/18 20:55:25 by mait-you          #+#    #+#             */
+/*   Updated: 2024/11/21 15:31:54 by mait-you         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*reset_line_backup(char **line_b, char *line, int line_len)
 {
@@ -70,16 +70,16 @@ static char	*get_line(int fd, char **line_b, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*line_b;
+	static char	*line_b[OPEN_MAX];
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
 	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	if (!get_line(fd, &line_b, buffer))
+	if (!get_line(fd, &line_b[fd], buffer))
 		return (free(buffer), NULL);
 	free(buffer);
-	return (get_clean_line(&line_b));
+	return (get_clean_line(&line_b[fd]));
 }
