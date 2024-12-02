@@ -6,7 +6,7 @@
 /*   By: mait-you <mait-you@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:54:49 by mait-you          #+#    #+#             */
-/*   Updated: 2024/11/21 15:45:23 by mait-you         ###   ########.fr       */
+/*   Updated: 2024/12/02 09:33:57 by mait-you         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
 # endif
 
 char	*get_next_line(int fd);

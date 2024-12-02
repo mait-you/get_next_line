@@ -6,7 +6,7 @@
 /*   By: mait-you <mait-you@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 12:54:13 by mait-you          #+#    #+#             */
-/*   Updated: 2024/11/21 15:29:05 by mait-you         ###   ########.fr       */
+/*   Updated: 2024/12/02 09:35:39 by mait-you         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ char	*get_next_line(int fd)
 	static char	*line_b;
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
-	buffer = (char *)malloc(BUFFER_SIZE + 1);
+	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	if (!get_line(fd, &line_b, buffer))
