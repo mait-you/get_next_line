@@ -70,7 +70,9 @@
 
 - **BUFFER_SIZE**: You can adjust the buffer size (BUFFER_SIZE) to optimize performance based on the type of files you're handling.
 
-
+      ```bash
+       gcc -Wall -Wextra -Werror -D BUFFER_SIZE=99 get_next_line.c get_next_line_utils.c main.c -o get_next_line
+       ```
 
 
 
