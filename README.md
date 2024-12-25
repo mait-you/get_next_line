@@ -4,17 +4,6 @@
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Performance](#performance)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
 ## Overview
 
 `get_next_line` is a simple yet efficient function for reading files line by line. It can handle large text files and binary files seamlessly.
@@ -65,15 +54,15 @@
   }
    ```
 
-  2. Compile the code using:
-    ```bash
-    gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c main.c -o get_next_line
-    ```
+   2. Compile the code using:
+      ```bash
+       gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c main.c -o get_next_line
+       ```
 
-  3. Run the executable:
-    ```bash
-    ./get_next_line
-    ```
+   4. Run the executable:
+      ```bash
+      ./get_next_line
+      ```
 
 ---
 
